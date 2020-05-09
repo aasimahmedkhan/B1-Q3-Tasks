@@ -23,7 +23,7 @@ contract MintAndCappedToken is IERC20{
     string public name;
     string public symbol;
     uint8 public decimals;
-    uint256 constant totalSupplyCap = 100000500; // Constant Value
+    uint256 private totalSupplyCap = 100000500; // Constant Value
     
    
 
@@ -32,6 +32,7 @@ contract MintAndCappedToken is IERC20{
         symbol = "MCT";
         decimals = 2;
         owner = msg.sender;
+        totalSupplyCap = 100000500;
         
         //1 million tokens to be generated
         //1 * (10**18)  = 1;
