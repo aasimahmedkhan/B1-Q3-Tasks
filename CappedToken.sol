@@ -23,14 +23,14 @@ contract MintAndCappedToken is IERC20{
     string public name;
     string public symbol;
     uint8 public decimals;
-    uint256 constant maxCap = 1500000; // Constant Value
+    uint256 constant totalSupplyCap = 100000500; // Constant Value
     
    
 
     constructor () public {
-        name = "MintAbleCapped Token";
+        name = "Capped Token";
         symbol = "MCT";
-        decimals = 0;
+        decimals = 2;
         owner = msg.sender;
         
         //1 million tokens to be generated
@@ -155,13 +155,13 @@ contract MintAndCappedToken is IERC20{
      * - the caller must have Owner of Contract
      * - amount should be valid incremental value.
      */
-     /*    Minting & Capped Tokens
-        Constant Value (maxCap) = 1500000 CappedLimit
+     /*     Capped Tokens
+        Constant Value (totalSupplyCap) = 100000500 CappedLimit
      */
     function mint(uint256 amount) public onlyOwner returns(uint256){
         require(amount > 0,"MCT: Invalid Amount. Minted amount should be greater than 0");
         _totalSupply = _totalSupply.add(amount);
-        require(_totalSupply <= maxCap, "MCT: Minting Tokens should not be exceed from CappedLimit = 1500000");
+        require(_totalSupply <= totalSupplyCap, "MCT: Minting Tokens should not be exceed from CappedLimit = 100000500");
         _balances[owner] = _balances[owner].add(amount);
         
     }
