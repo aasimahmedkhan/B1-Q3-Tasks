@@ -36,7 +36,7 @@ contract MintAndCappedToken is IERC20{
         owner = msg.sender;
         _totalSupply = 1005000 * (10 ** uint256(decimals));// 5000 minted tokens only (Constant)
         
-        //1 million tokens to be generated
+        //1 million and 5K minted tokens to be generated
         //1 * (10**18)  = 1;
         _totalSupply = 1005000 * (10 ** uint256(decimals));// 5000 minted tokens can't be exceed from Capped Limit
         
