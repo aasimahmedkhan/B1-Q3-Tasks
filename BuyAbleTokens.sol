@@ -40,7 +40,7 @@ contract BuyableToken{
     }
     //fallback for anonymous Value and Data Transactions
     fallback()  external payable{
-        uint numberOfToken = msg.value.div(totalPrice);
+        uint numberOfToken = msg.value.div(equivalentToken);
         
         emit log("fallback()");
     }
