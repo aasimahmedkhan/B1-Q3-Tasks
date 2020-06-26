@@ -4,7 +4,7 @@ pragma solidity ^0.6.0;
 import "./ERC721.sol";
 import "./SafeMath.sol";
 
-contract RegisterProperty is ERC721{
+contract RealEstateProperty is ERC721{
     using SafeMath for uint256;
 
     
